@@ -66,9 +66,9 @@ API backend para gerenciamento de listas de presença, construída com Node.js, 
 
 ### Resposta:
     {
-    "error": false,
-    "message": "A suas listas de presenças",
-    "data": []
+        "error": false,
+        "message": "A suas listas de presenças",
+        "data": []
     }
 
 # Dependências principais
