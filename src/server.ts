@@ -9,7 +9,8 @@ app.listen(port, () => {
 
 connection.connect((err) => {
     if(err) {
-        console.error("Não foi possível se connectar com o banco de dados")
+        console.error("Não foi possível se connectar com o banco de dados", err)
+        return
     }
     console.log("Conexão com banco de dados bem sucedida");
 })
