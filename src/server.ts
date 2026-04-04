@@ -1,4 +1,5 @@
 import { app } from "./app";
+import 'dotenv/config'
 import { connection } from './config/database/connection'
 
 const port = process.env.PORT
