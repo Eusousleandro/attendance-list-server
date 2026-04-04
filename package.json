@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start:dev": "tsx --env-file=.env src/server.ts",
-    "start:watch": "tsx watch --env-file=.env src/server.ts",
+    "start:watch": "tsx --watch --env-file=.env src/server.ts",
     "build": "tsup src",
     "start": "npm run build && node dist/server.js"
   },
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^17.4.0",
     "express": "^5.2.1",
     "mysql2": "^3.20.0"
   }
