@@ -25,7 +25,7 @@ export class AttendanceListService {
     }
 
     public async create(name: string) {
-        if(!name || name.trim() === "") {
+        if(!name) {
             throw new Error("O nome é obrigatório")
         }
         

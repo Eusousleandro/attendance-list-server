@@ -1,10 +1,11 @@
+import { ResultSetHeader, RowDataPacket } from 'mysql2'
 import { connection } from "../config/database/connection";
 
 export class AttendanceListRepository {
     async attendanceAll() {
-        const attendance = await connection.promise().query(
-            'SELECT * FROM attendances',
-        )
+        const attendance = await connection
+        .promise()
+        .query<RowDataPacket[]>('SELECT * FROM attendances')
         return attendance
     }
 
@@ -17,11 +18,19 @@ export class AttendanceListRepository {
     }
 
     async attendanceCreate(name: string) {
-        const newAttendance = await connection.promise().query(
+        const [newAttendance] = await connection.promise().query<ResultSetHeader>(
             'INSERT INTO attendances (name) VALUES (?)',
             [name, new Date()]
         )
-        return newAttendance
+        return {
+            id: newAttendance.insertId,
+            name: name,
+            time: new Date().toLocaleTimeString('pt-br', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            })
+        }
     }
 
     async attendanceUpdate(id: number, name: string) {
