@@ -8,6 +8,8 @@ app.listen(port, () => {
     console.log(`O servidor está rodando na porta ${port}`)
 })
 
+console.log("MYSQL_URL:", process.env.MYSQL_URL)
+
 connection.connect((err) => {
     if(err) {
         console.error("Não foi possível se connectar com o banco de dados", err)

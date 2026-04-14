@@ -18,18 +18,20 @@ export class AttendanceListRepository {
     }
 
     async attendanceCreate(name: string) {
+        const time = new Date().toLocaleTimeString('pt-br', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+        })
+
         const [newAttendance] = await connection.promise().query<ResultSetHeader>(
-            'INSERT INTO attendances (name) VALUES (?)',
-            [name, new Date()]
+            'INSERT INTO attendances (name, time) VALUES (?, ?)',
+            [name, time]
         )
         return {
             id: newAttendance.insertId,
             name: name,
-            time: new Date().toLocaleTimeString('pt-br', {
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            })
+            time: time
         }
     }
 
