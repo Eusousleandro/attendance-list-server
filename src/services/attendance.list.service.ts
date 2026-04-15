@@ -24,12 +24,12 @@ export class AttendanceListService {
         return attendanceById
     }
 
-    public async create(name: string, time: string) {
+    public async create(name: string, times: string) {
         if(!name) {
             throw new Error("O nome é obrigatório")
         }
 
-        const create = await this.attendanceListReposty.attendanceCreate(name, time)
+        const create = await this.attendanceListReposty.attendanceCreate(name, times)
         if(!create) {
             throw new Error("Não foi possível criar a sua lista")
         }

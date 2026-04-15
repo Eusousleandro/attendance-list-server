@@ -43,7 +43,7 @@ export class AttendanceListController {
     async createList(request: Request, response: Response) {
         try {
             const bodyList = request.body
-            const attendance = await this.attendanceListService.create(bodyList.name, bodyList.time)
+            const attendance = await this.attendanceListService.create(bodyList.name, bodyList.times)
             return response.status(201).json({
                 error: false,
                 message: "A sua lista foi criado com sucesso",
