@@ -12,7 +12,7 @@ const attendanceListController = new AttendanceListController(attendanceListServ
 router.get('/attendance', attendanceListController.getAll.bind(attendanceListController))
 router.get('/attendance/:id', attendanceListController.getById.bind(attendanceListController))
 router.post('/create/attendance', attendanceListController.createList.bind(attendanceListController))
-router.put('/update/attendance', attendanceListController.updateList.bind(attendanceListController))
-router.delete('/delete/attendance', attendanceListController.deleteList.bind(attendanceListController))
+router.put('/update/attendance/:id', attendanceListController.updateList.bind(attendanceListController))
+router.delete('/delete/attendance/:id', attendanceListController.deleteList.bind(attendanceListController))
 
 export { router }
