@@ -17,7 +17,7 @@ export class AttendanceListController {
             console.error(error)
             response.status(500).json({
                 error: true,
-                message: error.messgae
+                message: error.message
             })
         }
     }
@@ -35,7 +35,7 @@ export class AttendanceListController {
             console.error(error)
             response.status(500).json({
                 error: true,
-                message: error.messgae
+                message: error.message
             })
         }
     }
@@ -53,7 +53,7 @@ export class AttendanceListController {
             console.error(error)
             response.status(500).json({
                 error: true,
-                message: error.messgae
+                message: error.message
             })
         }
     }
@@ -72,7 +72,7 @@ export class AttendanceListController {
             console.error(error)
             response.status(500).json({
                 error: true,
-                message: error.messgae
+                message: error.message
             })
         }
     }
@@ -90,7 +90,7 @@ export class AttendanceListController {
             console.error(error)
             response.status(500).json({
                 error: true,
-                message: error.messgae
+                message: error.message
             })
         }
     }
