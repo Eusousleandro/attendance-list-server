@@ -3,10 +3,10 @@ import { connection } from "../config/database/connection";
 
 export class AttendanceListRepository {
     async attendanceAll() {
-        const attendance = await connection
+        const [rows] = await connection
         .promise()
         .query<RowDataPacket[]>('SELECT * FROM attendances')
-        return attendance
+        return rows
     }
 
     async attendanceById(id: number) {
